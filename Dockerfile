@@ -34,7 +34,7 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8 
 ENV LANGUAGE en_US.UTF-8 
 RUN chmod -R a+rwX /home
-USER build 
-WORKDIR /home/build
+ 
+
 CMD "/bin/bash"
 # EOF
