@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y upgrade
 # Required Packages for the Host Development System # http://www.yoctoproject.org/docs/latest/mega-manual/mega-manual.html#required-packages-for-the-host-development-system
 RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
-     xz-utils debianutils iputils-ping libsdl1.2-dev xterm python3-requests make g++ bzip2 libx11-dev
+     xz-utils debianutils iputils-ping libsdl1.2-dev xterm python3-requests make g++ bzip2 libx11-dev curl
 
 # Create a non-root user that will perform the actual build 
 RUN useradd --uid 30000 --create-home build
