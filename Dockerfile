@@ -13,6 +13,9 @@ RUN useradd --uid 30000 --create-home build
 RUN apt-get install -y sudo
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
 
+# add aws-cli
+RUN pip install awscli --upgrade
+
 # Fix error "Please use a locale setting which supports utf-8." # See https://wiki.yoctoproject.org/wiki/TipsAndTricks/ResolvingLocaleIssues 
 RUN apt-get install -y locales
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
