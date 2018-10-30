@@ -34,14 +34,6 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8 
 RUN chmod -R a+rwX /home
 
-# Creating tmpfs for temp folder of Yocto
-USER build
-RUN sudo mkdir -p /home/build/work/tmp
-RUN sudo mount -t tmpfs -o size=4096M tmpfs /home/build/work/tmp
-RUN sudo chmod 1777 /home/build/work/tmp
-
 CMD "/bin/bash"
-
-
 
 # EOF
