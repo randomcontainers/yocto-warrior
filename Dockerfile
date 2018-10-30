@@ -15,7 +15,8 @@ RUN apt-get install -y libxerces-c3.1 man-db
 RUN useradd --uid 30000 --create-home build
 RUN apt-get install -y sudo
 RUN echo "build ALL=(ALL) NOPASSWD: ALL" | tee -a /etc/sudoers
-RUN echo 'tmpfs /home/build/work/tmp tmpfs async,noatime,exec,rw,mode=1777,size=4096M,nr_inodes=10k,barrier=0,commit=6000    0       0' | tee -a /etc/fstab
+RUN mkdir -p /yocto-tmp
+RUN echo 'tmpfs /yocto-tmp tmpfs async,noatime,exec,rw,mode=1777,size=4096M,nr_inodes=10k,barrier=0,commit=6000    0       0' | tee -a /etc/fstab
 # add aws-cli
 RUN pip install awscli --upgrade
 
@@ -33,7 +34,6 @@ ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8 
 ENV LANGUAGE en_US.UTF-8 
 RUN chmod -R a+rwX /home
-RUN mkdir -p /home/build/work/tmp
 CMD "/bin/bash"
 
 # EOF
