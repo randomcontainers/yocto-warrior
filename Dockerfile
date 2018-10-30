@@ -8,6 +8,7 @@ RUN apt-get install -y gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
      xz-utils debianutils iputils-ping libsdl1.2-dev xterm python3-requests make g++ bzip2 libx11-dev curl python-pip symlinks
 
+
 # The following packages are used by BOA installtion
 RUN apt-get install -y libxerces-c3.1 man-db
 
